@@ -1,0 +1,38 @@
+---
+userName: idolbminh
+group: VIP2
+permissions:
+- blockpets.pet.ice
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.Dino
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.Dragon_ice
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.Dragon_ice
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.Dino
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.africano
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.baleia
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- blockpets.pet.chimpanze
+- blockpets.command.changepetname.use
+- blockpets.command.togglepet
+- royalPass.Tungsten.Perm
+- royalPass.Tungsten.Perm
+- royalPass.Tungsten.Perm
+- royalPass.Tungsten.Perm
+- royalPass.Tungsten.Perm
+- royalPass.Tungsten.Perm
+worlds: []
+time: -1
+expTime: -1
+...

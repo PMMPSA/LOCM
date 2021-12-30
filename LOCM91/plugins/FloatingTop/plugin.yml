@@ -1,0 +1,14 @@
+name: FloatingText
+author: TheNewManu
+version: 1.0.0
+api: 3.0.0
+main: TheNewManu\FloatingText\Main
+description: Add FloatingTexts to your server
+
+permissions:
+  ft:
+    children:
+     ft.command:
+      children:
+          ft.command.admin:
+            default: op

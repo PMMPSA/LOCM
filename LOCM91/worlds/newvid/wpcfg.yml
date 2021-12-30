@@ -1,0 +1,13 @@
+---
+pvp: false
+banitem:
+  325: Bucket
+  277: Diamond Shovel
+  383: Spawn Egg
+  259: Flint and Steel
+  269: Wooden Shovel
+  256: Iron Shovel
+  246: Glowing Obsidian
+  245: Stonecutter
+protect: lock
+...

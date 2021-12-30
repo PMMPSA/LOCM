@@ -1,0 +1,164 @@
+PocketMine-MP Crash Dump Sat Aug 29 16:57:29 +07 2020
+
+Error: Undefined index: ¯–ÛÝãÄ0 ¨ÒËýôÒ
+File: C:/Users/Administrator/Desktop/Server/virions/InvMenu-master/src/muqsit/invmenu/session/PlayerManager
+Line: 45
+Type: ErrorException
+
+A PLUGIN WAS INVOLVED IN THIS CRASH
+BAD PLUGIN: Minion v1.0.4
+
+Code:
+[36] 		self::$sessions[$uuid = $player->getRawUniqueId()]->finalize();
+[37] 		unset(self::$sessions[$uuid]);
+[38] 	}
+[39] 
+[40] 	public static function get(Player $player) : ?PlayerSession{
+[41] 		return self::$sessions[$player->getRawUniqueId()] ?? null;
+[42] 	}
+[43] 
+[44] 	public static function getNonNullable(Player $player) : PlayerSession{
+[45] 		return self::$sessions[$player->getRawUniqueId()];
+[46] 	}
+[47] }
+
+Backtrace:
+#0 C:/Users/Administrator/Desktop/Server/virions/InvMenu-master/src/muqsit/invmenu/session/PlayerManager(45): pocketmine\utils\Utils::errorExceptionHandler(integer 8, string[33] Undefined index: ......0........., string[105] C:\Users\Administrator\Desktop\Server\virions\InvMenu-master\src\muqsit\invmenu\, integer 45, array[1])
+#1 C:/Users/Administrator/Desktop/Server/virions/InvMenu-master/src/muqsit/invmenu/InvMenu(125): muqsit\invmenu\session\PlayerManager::getNonNullable(object phuongaz\LOCMCore\CustomPlayer)
+#2 plugins/Minion/src/CLADevs/Minion/database/Vault(78): muqsit\invmenu\InvMenu->send(object phuongaz\LOCMCore\CustomPlayer, NULL )
+#3 plugins/Minion/src/CLADevs/Minion/Main(247): CLADevs\Minion\database\Vault->send(object phuongaz\LOCMCore\CustomPlayer)
+#4 plugins/Minion/src/CLADevs/Minion/database/Database(100): CLADevs\Minion\Main->CLADevs\Minion\{closure}(object CLADevs\Minion\database\Vault)
+#5 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/DataConnectorImpl(159): CLADevs\Minion\database\Database->CLADevs\Minion\database\{closure}(array[0], array[0])
+#6 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/DataConnectorImpl(189): poggit\libasynql\base\DataConnectorImpl->poggit\libasynql\base\{closure}(object poggit\libasynql\result\SqlSelectResult)
+#7 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/SqlThreadPool(112): poggit\libasynql\base\DataConnectorImpl->poggit\libasynql\base\{closure}(object poggit\libasynql\result\SqlSelectResult)
+#8 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/DataConnectorImpl(268): poggit\libasynql\base\SqlThreadPool->readResults(array[1])
+#9 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/SqlThreadPool(65): poggit\libasynql\base\DataConnectorImpl->checkResults()
+#10 vendor/pocketmine/snooze/src/SleeperHandler(123): poggit\libasynql\base\SqlThreadPool->poggit\libasynql\base\{closure}()
+#11 (): [38;5;227m--- below is the original stack trace ---[m()
+#12 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/DataConnectorImpl(178): poggit\libasynql\base\DataConnectorImpl->executeImplRaw(string[74] SELECT HEX(data) AS data FROM vaults WHERE player='tpgbaker' AND number=1;, array[0], integer 3, object Closure, NULL )
+#13 C:/Users/Administrator/Desktop/Server/virions/libasynql/src/poggit/libasynql/base/DataConnectorImpl(157): poggit\libasynql\base\DataConnectorImpl->executeImpl(string[17] playervaults.load, array[2], integer 3, object Closure, NULL )
+#14 plugins/Minion/src/CLADevs/Minion/database/Database(104): poggit\libasynql\base\DataConnectorImpl->executeSelect(string[17] playervaults.load, array[2], object Closure)
+#15 plugins/Minion/src/CLADevs/Minion/Main(248): CLADevs\Minion\database\Database->loadVault(string[8] TPGbaker, integer 1, object Closure)
+#16 plugins/Minion/src/CLADevs/Minion/Main(201): CLADevs\Minion\Main->sendMinionInv(object phuongaz\LOCMCore\CustomPlayer, object CLADevs\Minion\minion\Minion)
+#17 plugins/FormAPI-master/src/jojoe77777/FormAPI/Form(46): CLADevs\Minion\Main->CLADevs\Minion\{closure}(object phuongaz\LOCMCore\CustomPlayer, integer 1)
+#18 src/pocketmine/Player(3603): jojoe77777\FormAPI\Form->handleResponse(object phuongaz\LOCMCore\CustomPlayer, integer 1)
+#19 src/pocketmine/network/mcpe/PlayerNetworkSessionAdapter(264): pocketmine\Player->onFormSubmit(integer 26, integer 1)
+#20 src/pocketmine/network/mcpe/protocol/ModalFormResponsePacket(49): pocketmine\network\mcpe\PlayerNetworkSessionAdapter->handleModalFormResponse(object pocketmine\network\mcpe\protocol\ModalFormResponsePacket)
+#21 src/pocketmine/network/mcpe/PlayerNetworkSessionAdapter(110): pocketmine\network\mcpe\protocol\ModalFormResponsePacket->handle(object pocketmine\network\mcpe\PlayerNetworkSessionAdapter)
+#22 src/pocketmine/network/mcpe/protocol/BatchPacket(127): pocketmine\network\mcpe\PlayerNetworkSessionAdapter->handleDataPacket(object pocketmine\network\mcpe\protocol\ModalFormResponsePacket)
+#23 src/pocketmine/network/mcpe/PlayerNetworkSessionAdapter(110): pocketmine\network\mcpe\protocol\BatchPacket->handle(object pocketmine\network\mcpe\PlayerNetworkSessionAdapter)
+#24 src/pocketmine/Player(3250): pocketmine\network\mcpe\PlayerNetworkSessionAdapter->handleDataPacket(object pocketmine\network\mcpe\protocol\BatchPacket)
+#25 src/pocketmine/network/mcpe/RakLibInterface(169): pocketmine\Player->handleDataPacket(object pocketmine\network\mcpe\protocol\BatchPacket)
+#26 vendor/pocketmine/raklib/src/server/ServerHandler(99): pocketmine\network\mcpe\RakLibInterface->handleEncapsulated(string[18] 42.116.106.34 3858, object raklib\protocol\EncapsulatedPacket, integer 0)
+#27 src/pocketmine/network/mcpe/RakLibInterface(109): raklib\server\ServerHandler->handlePacket()
+#28 src/pocketmine/network/mcpe/RakLibInterface(99): pocketmine\network\mcpe\RakLibInterface->process()
+#29 vendor/pocketmine/snooze/src/SleeperHandler(123): pocketmine\network\mcpe\RakLibInterface->pocketmine\network\mcpe\{closure}()
+#30 vendor/pocketmine/snooze/src/SleeperHandler(85): pocketmine\snooze\SleeperHandler->processNotifications()
+#31 src/pocketmine/Server(2157): pocketmine\snooze\SleeperHandler->sleepUntil(double 1598695049.7926)
+#32 src/pocketmine/Server(1994): pocketmine\Server->tickProcessor()
+#33 src/pocketmine/Server(1588): pocketmine\Server->start()
+#34 src/pocketmine/PocketMine(273): pocketmine\Server->__construct(object BaseClassLoader, object pocketmine\utils\MainLogger, string[38] C:\Users\Administrator\Desktop\Server\, string[46] C:\Users\Administrator\Desktop\Server\plugins\)
+#35 src/pocketmine/PocketMine(304): pocketmine\server()
+#36 (11): require(string[93] phar://C:/Users/Administrator/Desktop/Server/PocketMine-MP.phar/src/pocketmine/P)
+
+PocketMine-MP version: 3.15.0 [Protocol 408]
+Git commit: a498b0415ab2edf18300470dfe6d182372f25190
+uname -a: Windows NT PTKVPS 6.3 build 9600 (Windows Server 2012 R2 Standard Edition) AMD64
+PHP Version: 7.3.13
+Zend version: 3.3.13
+OS : WINNT, win
+Composer libraries: 
+- adhocore/json-comment 0.1.0@8448076039389f558f39ad0553aab87db3f81614
+- ocramius/package-versions 1.5.1@1d32342b8c1eb27353c8887c366147b4c2da673c
+- pocketmine/binaryutils 0.1.11@e8cb65db1b7998eebb739b124f2a989fe87366eb
+- pocketmine/callback-validator 1.0.1@4aef6bb25f97d0b830ba0b4f66834b1a9c86fc9a
+- pocketmine/classloader 0.1.0@4ccdb30e48f030bfcad04bb0a208d198ec631993
+- pocketmine/log 0.2.0@e59bedb5d4bbeb9a26647cb7c367cb2fa72addfa
+- pocketmine/log-pthreads 0.1.0@9bbcef398b01487ab47c234a6a7054722abbe067
+- pocketmine/math 0.2.4@b1c28b236df8b795d7b06cf8421f9962b12ac410
+- pocketmine/nbt 0.2.14@b31dca98443328c4bab76dc1b84c1473c79be20e
+- pocketmine/raklib 0.12.8@9fea763ffc922db083e4528d4acd0b13d0ea83a4
+- pocketmine/snooze 0.1.2@88420da3d9335dbcb3ee2decfd5e5453d057dcdf
+- pocketmine/spl 0.4.1@ff0579a0be41bbe65d3637607715c0f87728a838
+- doctrine/instantiator 1.3.1@f350df0268e904597e3bd9c4685c53e0e333feea
+- myclabs/deep-copy 1.10.1@969b211f9a51aa1f6c01d1d2aef56d3bd91598e5
+- nikic/php-parser v4.8.0@8c58eb4cd4f3883f82611abeac2efbc3dbed787e
+- phar-io/manifest 2.0.1@85265efd3af7ba3ca4b2a2c34dbfc5788dd29133
+- phar-io/version 3.0.2@c6bb6825def89e0a32220f88337f8ceaf1975fa0
+- phpdocumentor/reflection-common 2.2.0@1d01c49d4ed62f25aa84a747ad35d5a16924662b
+- phpdocumentor/reflection-docblock 5.2.0@3170448f5769fe19f456173d833734e0ff1b84df
+- phpdocumentor/type-resolver 1.3.0@e878a14a65245fbe78f8080eba03b47c3b705651
+- phpspec/prophecy 1.11.1@b20034be5efcdab4fb60ca3a29cba2949aead160
+- phpstan/phpstan 0.12.37@5e16d83e6eb2dd784fbdaeaece5e2bca72e4f68a
+- phpstan/phpstan-phpunit 0.12.16@1dd916d181b0539dea5cd37e91546afb8b107e17
+- phpstan/phpstan-strict-rules 0.12.4@9b86e1eb77c796628e239820a01a2d327d607a5e
+- phpunit/php-code-coverage 9.1.3@4abbce3b0ad05f2e7143ea5f775d5513cb5261e4
+- phpunit/php-file-iterator 3.0.4@25fefc5b19835ca653877fe081644a3f8c1d915e
+- phpunit/php-invoker 3.1.0@7a85b66acc48cacffdf87dadd3694e7123674298
+- phpunit/php-text-template 2.0.2@6ff9c8ea4d3212b88fcf74e25e516e2c51c99324
+- phpunit/php-timer 5.0.1@cc49734779cbb302bf51a44297dab8c4bbf941e7
+- phpunit/phpunit 9.3.5@7115b00b23bcd4f62a73855c9615694d2f206e71
+- sebastian/code-unit 1.0.5@c1e2df332c905079980b119c4db103117e5e5c90
+- sebastian/code-unit-reverse-lookup 2.0.2@ee51f9bb0c6d8a43337055db3120829fa14da819
+- sebastian/comparator 4.0.3@dcc580eadfaa4e7f9d2cf9ae1922134ea962e14f
+- sebastian/complexity 2.0.0@33fcd6a26656c6546f70871244ecba4b4dced097
+- sebastian/diff 4.0.2@1e90b4cf905a7d06c420b1d2e9d11a4dc8a13113
+- sebastian/environment 5.1.2@0a757cab9d5b7ef49a619f1143e6c9c1bc0fe9d2
+- sebastian/exporter 4.0.2@571d721db4aec847a0e59690b954af33ebf9f023
+- sebastian/global-state 5.0.0@22ae663c951bdc39da96603edc3239ed3a299097
+- sebastian/lines-of-code 1.0.0@e02bf626f404b5daec382a7b8a6a4456e49017e5
+- sebastian/object-enumerator 4.0.2@074fed2d0a6d08e1677dd8ce9d32aecb384917b8
+- sebastian/object-reflector 2.0.2@127a46f6b057441b201253526f81d5406d6c7840
+- sebastian/recursion-context 4.0.2@062231bf61d2b9448c4fa5a7643b5e1829c11d63
+- sebastian/resource-operations 3.0.2@0653718a5a629b065e91f774595267f8dc32e213
+- sebastian/type 2.2.1@86991e2b33446cd96e648c18bcdb1e95afb2c05a
+- sebastian/version 3.0.1@626586115d0ed31cb71483be55beb759b5af5a3c
+- symfony/polyfill-ctype v1.18.1@1c302646f6efc070cd46856e600e5e0684d6b454
+- theseer/tokenizer 1.2.0@75a63c33a8577608444246075ea0af0d052e452a
+- webmozart/assert 1.9.1@bafc69caeb4d49c39fd0779086c03a3738cbb389
+- pocketmine/pocketmine-mp 3.15.0@a498b0415ab2edf18300470dfe6d182372f25190
+
+Loaded plugins:
+DevTools 1.13.0 by PocketMine Team for API(s) 3.0.0
+WorldProtect 2.3.8 by aliuly for API(s) 3.0.0
+MultiWorld 1.5.2 by CzechPMDevs, VixikCZ, fuyutsuki, kaliiks for API(s) 3.0.0
+InvCrashFix 0.0.1 by  for API(s) 3.14.0
+PurePerms 1.4.3 by 64FF00 & ProjectInfinity for API(s) 3.0.0
+AuctionHouse 1.1.2 by Shock95x for API(s) 3.0.0
+DEVirion 1.2.5-ALPHA12 by poggit, SOFe for API(s) 3.0.0
+BedcoreProtect 0.7.1 by matcracker for API(s) 3.13.0
+CustomWings 1.0.0 by phuongaz for API(s) 3.0.0
+LCoin 1 by phuongaz for API(s) 3.0.0
+LOCMSkyblock 3.1.3 by RedCraftPE for API(s) 3.0.0, 4.0.0
+MSpawns 2.2 by EvolSoft for API(s) 3.0.0
+PMRequisites 1.1.0 by  for API(s) 3.0.0
+Mockingbird 1.0-beta by  for API(s) 3.14.0
+PetCustom 1.1.2 by BlockHorizons for API(s) 3.0.0
+FloatingText 1.0.0 by TheNewManu for API(s) 3.0.0
+PureChat 1.4.11 by 64FF00 for API(s) 3.0.0
+SlapperRotation 1.2.1 by jojoe77777 for API(s) 3.0.0
+McMMO 1.0.0 by AkmalFairuz for API(s) 3.0.0
+Core 1 by phuongaz for API(s) 3.0.0
+FormImagesFix 0.0.1 by  for API(s) 3.11.4
+EconomyAPI 4.0.0 by onebone for API(s) 3.0.0, 3.1.0, 4.0.0
+CubeBox 1.1.0 by TheAz928 for API(s) 3.0.0
+FormAPI 1.3.0 by jojoe77777 for API(s) 3.2.0
+ProtocolSupport 1.0.0 by GiantQuartz for API(s) 3.15.0
+DolaShop 4.0.5 by SaltyPixelDevz for API(s) 3.0.0
+Minion 1.0.4 by phuongaz for API(s) 3.0.0
+PiggyCustomEnchants 2.3.0 by DaPigGuy for API(s) 3.14.0
+AntiVoid 1.1.0 by FiberglassCivic for API(s) 3.0.0
+Boss_Quai 2.1 by phuongaz for API(s) 3.0.0
+AddGems 1 by  for API(s) 3.0.0
+BravoClan 1.1 by Itzdvbravo for API(s) 3.14.0
+VanillaEnchantments 4.0.0 by TheAz928 for API(s) 3.0.0, 3.1.0
+AutoInv 0.0.10 by JackNoordhuis for API(s) 3.0.0
+BuilderTools 1.2.0-beta3 by CzechPMDevs, VixikCZ for API(s) 3.0.0
+Slapper 1.6.0 by jojoe77777 for API(s) 3.13.0
+CustomShopUI 4.0.5 by SaltyPixelDevz for API(s) 3.0.0
+Texter 3.4.9 by yuko_fuyutsuki, mfmfnek0, onebone, ogiwara, Shootsta_ERU0531, Toganon, ShadowArt, Marron0421, No4NaMe, SuperYYT, SuperAdam47, minijaham, VicoSilalahi for API(s) 3.10.0
+Sell 1.2.13 by phuongaz for API(s) 3.0.0
+
+----------------------REPORT THE DATA BELOW THIS LINE-----------------------
+
+===BEGIN CRASH DUMP===

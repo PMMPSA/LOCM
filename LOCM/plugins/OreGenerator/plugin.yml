@@ -1,0 +1,11 @@
+name: OreGen
+description: Mining Generators Like NexusPe
+main: IronGen\Main
+version: 1.0
+api: [3.0.0, 4.0.0]
+
+
+commands:
+  ore:
+    description: Give someone a Mining generator
+    permission: ore.command
