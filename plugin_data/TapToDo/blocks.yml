@@ -1,0 +1,10 @@
+---
+version: 1
+blocks:
+- x: 51
+  "y": 25
+  z: -20
+  level: newvid
+  commands:
+  - ssp
+...

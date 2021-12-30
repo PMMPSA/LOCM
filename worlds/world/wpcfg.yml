@@ -1,0 +1,11 @@
+---
+banitem:
+  259: Flint and Steel
+  269: Wooden Shovel
+  273: Stone Shovel
+  256: Iron Shovel
+  284: Gold Shovel
+  277: Diamond Shovel
+  245: Stonecutter
+protect: lock
+...

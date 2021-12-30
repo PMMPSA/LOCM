@@ -1,0 +1,58 @@
+---
+Version: 1
+SkyBlock:
+  toilagauuu:
+    Name: ToilaGauuu's Island
+    Members:
+    - ToilaGauuu
+    Banned: []
+    Locked: false
+    Value: 0
+    World: skyblock
+    Reset Cooldown: 0
+    Challenges: []
+    Spawn:
+      X: 2010.000000
+      "Y": 33.000000
+      Z: 2009.000000
+    Area:
+      start:
+        X: 1952
+        "Y": 0
+        Z: 1954
+      end:
+        X: 2052
+        "Y": 256
+        Z: 2054
+    Settings:
+      Build: "on"
+      Break: "on"
+      Pickup: "on"
+      Anvil: "on"
+      Chest: "on"
+      CraftingTable: "off"
+      Fly: "off"
+      Hopper: "on"
+      Brewing: "off"
+      Beacon: "on"
+      Buckets: "on"
+      PVP: "off"
+      FlintAndSteel: "on"
+      Furnace: "on"
+      EnderChest: "off"
+Islands: 13
+Custom: true
+CustomX: 2
+CustomY: 3
+CustomZ: 4
+Pos1: false
+Pos2: false
+x1: ~
+x2: ~
+y1: ~
+y2: ~
+z1: ~
+z2: ~
+blocks: []
+worlds: 0
+...
